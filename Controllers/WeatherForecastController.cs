@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,6 @@ namespace WhosTurnServer.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
