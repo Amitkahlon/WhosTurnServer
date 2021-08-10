@@ -53,7 +53,7 @@ namespace WhosTurnServer.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
             return Ok();
         }
