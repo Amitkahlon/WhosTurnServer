@@ -29,7 +29,7 @@ namespace WhosTurnServer.Controllers
             var user = this.userRepo.Authenticate(model.Email, model.Password);
             if (user == null)
             {
-                return BadRequest(new { message = "Username or password is incorrect" });
+                return Unauthorized(new { message = "Username or password is incorrect" });
             }
             return Ok(user);
         }
@@ -55,6 +55,7 @@ namespace WhosTurnServer.Controllers
         [AllowAnonymous]
         public IActionResult Get()
         {
+
             return Ok();
         }
     }
